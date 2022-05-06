@@ -34,14 +34,14 @@
                                         {
                                             $num = rand(97, 122);
                                             $char = chr($num);
-                                            echo '$char';
+                                            echo $char;
                                             $a++;
                                         }
                                     .'</td>
                                 </tr>
                             </tbody>
                       </table>
-                    '
+                    ';
     ?>
 </body>
 </html>
