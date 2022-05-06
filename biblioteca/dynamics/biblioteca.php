@@ -41,6 +41,27 @@
                     </tbody>
                     ';
                 echo '</table>';
+
+                if ($timezone == "Asia/Hong_Kong")
+                            {
+                                $fecha=date('d M Y  h:i a');
+                                echo'<i>La fecha de consulta de este libro fue:'.$fecha.' en '.$timezone.'</i>';
+                            }
+                if ($timezone == "Africa/Dakar")
+                            {
+                                $fecha=date('d M Y  h:i a');
+                                echo'<i>La fecha de consulta de este libro fue:'.$fecha.' en '.$timezone.'</i>';
+                            }
+                if ($timezone == "Indian/Christmas")
+                            {
+                                $fecha=date('d M Y  h:i a');
+                                echo'<i>La fecha de consulta de este libro fue:'.$fecha.' en '.$timezone.'</i>';
+                            }
+                if ($timezone == "America/Mexico_City")
+                            {
+                                $fecha=date('d M Y  h:i a');
+                                echo'<i>La fecha de consulta de este libro fue:'.$fecha.' en '.$timezone.'</i>';
+                            }
     ?>
 </body>
 </html>
