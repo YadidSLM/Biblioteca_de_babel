@@ -21,30 +21,27 @@
             echo $char;
             $a++;
         }
-                echo '<table>'
-                    echo '
-                    <thead>
-                        <tr>
-                            <th>Libro'. $num. ($num + 413).'</th>
-                        </tr>
-                    </thead>
-                    ';
-                    echo'
-                    <tbody>
-                        <tr>
-                            <td>'.
-                                while($a <= $i)
-                                {
-                                    $num = rand(97, 122);
-                                    $char = chr($num);
-                                    echo $char;
-                                    $a++;
-                                }
-                            .'</td>
-                        </tr>
-                    </tbody>
-                    ';
-                echo '</table>';
+                echo '<table>
+                            <thead>
+                                <tr>
+                                    <th>Libro'. $num. ($num + 413).'</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>'.
+                                        while($a <= $i)
+                                        {
+                                            $num = rand(97, 122);
+                                            $char = chr($num);
+                                            echo '$char';
+                                            $a++;
+                                        }
+                                    .'</td>
+                                </tr>
+                            </tbody>
+                      </table>
+                    '
     ?>
 </body>
 </html>
