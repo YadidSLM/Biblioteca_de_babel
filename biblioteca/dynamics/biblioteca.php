@@ -11,7 +11,6 @@
         $buscar = (isset($_POST['buscar']) && $_POST != "")? $_POST['buscar']: 'No especifico';
         $timezone = (isset($_POST['timezone']) && $_POST != "")? $_POST['timezone']: 'No especifico';
         $modo = (isset($_POST['modo']) && $_POST != "")? $_POST['modo']: 'No especifico';
-        //$a = 0;
         $i = rand(4, 10);
         $um = rand(97, 122);
         $palabras = rand(300, 500);
