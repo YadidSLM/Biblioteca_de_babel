@@ -64,7 +64,7 @@
                     </tbody>
                     ';
                 echo '</table>';
-
+                
                 if ($timezone == "Asia/Hong_Kong")
                             {
                                 $fecha=date('d M Y  h:i a');
