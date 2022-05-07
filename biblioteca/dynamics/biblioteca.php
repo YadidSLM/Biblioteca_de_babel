@@ -11,9 +11,11 @@
         $buscar = (isset($_POST['buscar']) && $_POST != "")? $_POST['buscar']: 'No especifico';
         $timezone = (isset($_POST['timezone']) && $_POST != "")? $_POST['timezone']: 'No especifico';
         $modo = (isset($_POST['modo']) && $_POST != "")? $_POST['modo']: 'No especifico';
+        $buscar = strtoupper($buscar);
+        $gol;
         $i = rand(4, 10);
-        $um = rand(97, 122);
         $palabras = rand(300, 500);
+        $um = rand(1, $palabras);
                 echo "<table border='1'cellpadding='25px' style='margin:50px'>";
                     echo '
                     <thead>
@@ -51,11 +53,24 @@
                                         }
                                         //echo $psIngresadas;
                                     }
-                                    else if($c == $um && $modo == "Palabras")
+                                    else if($modo == "Palabras")
                                     {
                                         $psIngresadas = explode(" ", $buscar);
                                         $cuenta = count($psIngresadas);
-                                        echo "<strong style='font-size:20px'><i>".$psIngresadas[$cuenta]."</i></strong>";
+                                        $h = rand(1, $um);
+                                        $g = rand($um, $palabras);
+                                        //echo "<strong style='font-size:20px'><i>".$psIngresadas[$cuenta]."</i></strong>";
+                                        if($c == $um)
+                                        {
+                                            do
+                                            {
+                                                $n = rand(0, $cuenta - 1);
+                                            }
+                                            while($psIngresadas[$n] == NULL);
+                                            echo "<strong style='font-size:20px'><i> $psIngresadas[$n]</i></strong>";
+                                            $psIngresadas[$n] = NULL;
+                                            $um = rand($um+1, $palabras);
+                                        }
                                     }
                                     echo "  ";
                                 }    
@@ -64,7 +79,7 @@
                     </tbody>
                     ';
                 echo '</table>';
-                
+
                 if ($timezone == "Asia/Hong_Kong")
                             {
                                 $fecha=date('d M Y  h:i a');
