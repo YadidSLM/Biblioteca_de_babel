@@ -13,7 +13,7 @@
         $modo = (isset($_POST['modo']) && $_POST != "")? $_POST['modo']: 'No especifico';
         $buscar = strtoupper($buscar);
         $gol;
-        $i = rand(4, 10);
+        $s = 0;
         $palabras = rand(300, 500);
         $um = rand(1, $palabras);
                 echo "<table border='1'cellpadding='25px' style='margin:50px'>";
@@ -28,8 +28,14 @@
                     <tbody>
                         <tr>
                             <td>';
+                                if($modo == "Palabras")
+                                {
+                                    $psIngresadas = explode(" ", $buscar);
+                                    $um = rand(1, 100);
+                                }
                                 for($c = 0; $c <= $palabras; $c++)
                                 {
+                                    $i = rand(4, 10);
                                     for($a = 0; $a <= $i; $a++)
                                     {
                                         $num = rand(97, 122);
@@ -55,22 +61,25 @@
                                     }
                                     else if($modo == "Palabras")
                                     {
-                                        $psIngresadas = explode(" ", $buscar);
+                                        //$psIngresadas = explode(" ", $buscar);
                                         $cuenta = count($psIngresadas);
-                                        $h = rand(1, $um);
-                                        $g = rand($um, $palabras);
                                         //echo "<strong style='font-size:20px'><i>".$psIngresadas[$cuenta]."</i></strong>";
-                                        if($c == $um)
+                                        if($c == $um && $s <= $cuenta)
                                         {
                                             do
                                             {
                                                 $n = rand(0, $cuenta - 1);
                                             }
-                                            while($psIngresadas[$n] == NULL);
+                                            while($psIngresadas[$n] == '*');
+                                            //La localidad $psIngresadas[$n] ¿cuándo toma el valor de NULL?
                                             echo "<strong style='font-size:20px'><i> $psIngresadas[$n]</i></strong>";
-                                            $psIngresadas[$n] = NULL;
+                                            $psIngresadas[$n] = '*';
+                                            print_r($psIngresadas);
+                                            $s++;
                                             $um = rand($um+1, $palabras);
+                                            
                                         }
+                                        echo "<strong style='font-size:20px'><i> $s</i></strong>";
                                     }
                                     echo "  ";
                                 }    
